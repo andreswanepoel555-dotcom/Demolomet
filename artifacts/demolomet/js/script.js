@@ -10,27 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
   }
 
   // ========================
   // HAMBURGER MENU
   // ========================
   const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+  const navLinks  = document.getElementById('navLinks');
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       navLinks.classList.toggle('open');
     });
-
-    // Close on link click (mobile)
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
@@ -47,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const href = link.getAttribute('href');
     const isHome = (path === '/' || path === '/index.html' || path.endsWith('/demolomet/') || path.endsWith('/demolomet'));
     if (
-      (href === '/' || href === '/index.html') && isHome ||
-      href !== '/' && href !== '/index.html' && path.includes(href.replace('.html', ''))
+      ((href === '/' || href === '/index.html' || href === 'index.html') && isHome) ||
+      (href !== '/' && href !== '/index.html' && href !== 'index.html' && path.includes(href.replace('.html', '')))
     ) {
       link.classList.add('active');
     }
@@ -59,36 +53,78 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================
   const heroWord = document.getElementById('heroWord');
   if (heroWord) {
-    const words = ['Experts', 'Specialists', 'Professionals', 'Contractors', 'Solutions'];
-    let current = 0;
+    const words   = ['Experts', 'Specialists', 'Contractors', 'Solutions'];
+    let current   = 0;
+    let timer     = null;
 
     const cycleWord = () => {
       heroWord.classList.add('fade-out');
-
       setTimeout(() => {
         current = (current + 1) % words.length;
         heroWord.textContent = words[current];
         heroWord.classList.remove('fade-out');
         heroWord.classList.add('fade-in');
-
-        setTimeout(() => {
-          heroWord.classList.remove('fade-in');
-        }, 400);
-      }, 400);
+        setTimeout(() => heroWord.classList.remove('fade-in'), 380);
+      }, 360);
     };
 
-    // Trigger initial fade-in
-    heroWord.classList.add('fade-in');
-    setTimeout(() => heroWord.classList.remove('fade-in'), 400);
+    // Don't start until hero animation has run
+    setTimeout(() => {
+      heroWord.classList.add('fade-in');
+      setTimeout(() => heroWord.classList.remove('fade-in'), 380);
+      timer = setInterval(cycleWord, 3000);
+    }, 1200);
 
-    setInterval(cycleWord, 2800);
+    // Pause cycle when tab is hidden (performance)
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        clearInterval(timer);
+      } else {
+        timer = setInterval(cycleWord, 3000);
+      }
+    });
+  }
+
+  // ========================
+  // STATS COUNT-UP
+  // ========================
+  const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+
+  const countUp = (el) => {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1800;
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const value = Math.floor(eased * target);
+      el.textContent = value + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  if (statNumbers.length > 0) {
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(el => statsObserver.observe(el));
   }
 
   // ========================
   // SCROLL REVEAL
   // ========================
   const revealEls = document.querySelectorAll('.reveal');
-
   if (revealEls.length > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -98,8 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.1,
+      rootMargin: '0px 0px -48px 0px'
     });
 
     revealEls.forEach(el => observer.observe(el));
@@ -108,34 +144,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========================
   // CONTACT FORM
   // ========================
-  const form = document.getElementById('contactForm');
+  const form        = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
 
   if (form) {
     form.addEventListener('submit', (e) => {
       let valid = true;
 
-      // Clear previous errors
       form.querySelectorAll('.form-error-msg').forEach(el => {
         el.style.display = 'none';
       });
 
-      // Validate fields
       const fields = [
-        { id: 'fieldName', msg: 'errorName', label: 'Name' },
-        { id: 'fieldSurname', msg: 'errorSurname', label: 'Surname' },
-        { id: 'fieldPhone', msg: 'errorPhone', label: 'Contact number' },
-        { id: 'fieldEmail', msg: 'errorEmail', label: 'Email' },
-        { id: 'fieldMessage', msg: 'errorMessage', label: 'Message' },
+        { id: 'fieldName',    msg: 'errorName',    type: 'text'  },
+        { id: 'fieldSurname', msg: 'errorSurname', type: 'text'  },
+        { id: 'fieldPhone',   msg: 'errorPhone',   type: 'phone' },
+        { id: 'fieldEmail',   msg: 'errorEmail',   type: 'email' },
+        { id: 'fieldMessage', msg: 'errorMessage', type: 'text'  },
       ];
 
-      fields.forEach(({ id, msg }) => {
+      fields.forEach(({ id, msg, type }) => {
         const input = document.getElementById(id);
         const errEl = document.getElementById(msg);
         if (!input || !errEl) return;
 
         const value = input.value.trim();
-
         if (!value) {
           errEl.textContent = 'This field is required.';
           errEl.style.display = 'block';
@@ -143,22 +176,16 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
-        if (id === 'fieldEmail') {
-          const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRe.test(value)) {
-            errEl.textContent = 'Please enter a valid email address.';
-            errEl.style.display = 'block';
-            valid = false;
-          }
+        if (type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          errEl.textContent = 'Please enter a valid email address.';
+          errEl.style.display = 'block';
+          valid = false;
         }
 
-        if (id === 'fieldPhone') {
-          const phoneRe = /^[\d\s\+\-\(\)]{6,}$/;
-          if (!phoneRe.test(value)) {
-            errEl.textContent = 'Please enter a valid contact number.';
-            errEl.style.display = 'block';
-            valid = false;
-          }
+        if (type === 'phone' && !/^[\d\s\+\-\(\)]{6,}$/.test(value)) {
+          errEl.textContent = 'Please enter a valid contact number.';
+          errEl.style.display = 'block';
+          valid = false;
         }
       });
 
@@ -167,14 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // For Netlify forms — let it submit naturally if hosted on Netlify
-      // For non-Netlify preview, show success message
-      if (!window.location.hostname.includes('netlify') && !window.location.hostname.includes('replit.app')) {
+      // On live Netlify — submit naturally. In preview — show success UI.
+      const isLive = window.location.hostname.includes('netlify') ||
+                     window.location.hostname.includes('replit.app');
+      if (!isLive) {
         e.preventDefault();
         form.style.display = 'none';
         if (formSuccess) formSuccess.style.display = 'block';
       }
-      // On actual Netlify deployment, the form submits normally to Netlify's handler
     });
   }
 

@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Demolomet – Scrap Metal & Demolition Experts | North West, South Africa</title>
+  <title>Demolomet – Scrap Metal &amp; Demolition Experts | North West, South Africa</title>
   <meta name="description" content="Demolomet is your trusted scrap metal collection and demolition contractor in the North West province. Expert site clearing, industrial cleanup, and demolition services. Contact Dalmain today." />
   <meta name="keywords" content="demolition, scrap metal, site clearing, industrial cleanup, North West, Hartbeespoort, Brits, South Africa" />
-  <meta property="og:title" content="Demolomet – Scrap Metal & Demolition Experts" />
+  <meta property="og:title" content="Demolomet – Scrap Metal &amp; Demolition Experts" />
   <meta property="og:description" content="Trusted demolition and scrap metal specialists in North West, South Africa." />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ff8c2c'/><text y='.9em' font-size='80' x='10'>D</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='8' fill='%23ff8c2c'/><text y='.9em' font-size='80' font-weight='bold' x='10' fill='white'>D</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -21,12 +21,12 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <div class="nav-inner">
-        <a href="/" class="nav-logo">Demolomet</a>
+        <a href="index.html" class="nav-logo">Demolomet</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-          <li><a href="/" data-testid="nav-home">Home</a></li>
+          <li><a href="index.html" data-testid="nav-home">Home</a></li>
           <li><a href="services.html" data-testid="nav-services">Services</a></li>
           <li><a href="about.html" data-testid="nav-about">About</a></li>
           <li><a href="projects.html" data-testid="nav-projects">Projects</a></li>
@@ -39,14 +39,32 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
+
+    <!--
+      VIDEO HERO: Place your demolition video file at  video/hero.mp4
+      The video will autoplay with mute on all devices including iOS.
+      The fallback .hero-bg image shows until the video loads.
+    -->
+    <video class="hero-video" autoplay muted loop playsinline preload="auto"
+           poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=60">
+      <source src="video/hero.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Fallback background image (always visible before/behind video) -->
     <div class="hero-bg"></div>
+
+    <!-- Layered overlays -->
     <div class="hero-overlay"></div>
-    <div class="hero-vignette"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-vignette" aria-hidden="true"></div>
 
     <div class="hero-content">
+      <div class="hero-eyebrow">North West Province &bull; South Africa</div>
       <h1>
         Demolomet &ndash; Scrap Metal &amp; Demolition
-        <span class="hero-word fade-in" id="heroWord">Experts</span>
+        <span class="hero-word-wrap">
+          <span class="hero-word" id="heroWord">Experts</span>
+        </span>
       </h1>
       <p class="hero-sub">We show up when others won't. Tough, reliable, and professional industrial clearing across the North West province.</p>
       <div class="hero-cta-group">
@@ -65,20 +83,20 @@
   <section class="stats-bar">
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-item reveal" data-testid="stat-experience">
-          <div class="stat-number">15+</div>
+        <div class="stat-item" data-testid="stat-experience">
+          <div class="stat-number" data-count="15" data-suffix="+">15+</div>
           <div class="stat-label">Years Experience</div>
         </div>
-        <div class="stat-item reveal reveal-delay-1" data-testid="stat-projects">
-          <div class="stat-number">500+</div>
+        <div class="stat-item" data-testid="stat-projects">
+          <div class="stat-number" data-count="500" data-suffix="+">500+</div>
           <div class="stat-label">Projects Completed</div>
         </div>
-        <div class="stat-item reveal reveal-delay-2" data-testid="stat-clients">
-          <div class="stat-number">200+</div>
+        <div class="stat-item" data-testid="stat-clients">
+          <div class="stat-number" data-count="200" data-suffix="+">200+</div>
           <div class="stat-label">Satisfied Clients</div>
         </div>
-        <div class="stat-item reveal reveal-delay-3" data-testid="stat-locations">
-          <div class="stat-number">2</div>
+        <div class="stat-item" data-testid="stat-locations">
+          <div class="stat-number" data-count="2" data-suffix="">2</div>
           <div class="stat-label">Locations</div>
         </div>
       </div>
@@ -98,32 +116,36 @@
 
     <div class="services-preview-grid">
       <div class="service-preview-card reveal">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Demolition Services" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Excavator demolishing a building structure" loading="lazy" />
         <div class="service-preview-overlay">
+          <div class="service-preview-number">01</div>
           <h3>Demolition Services</h3>
         </div>
       </div>
       <div class="service-preview-card reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1616763355548-1b606f439f86?w=800&q=80" alt="Scrap Metal Collection" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1581094651181-35942459ef62?w=800&q=80" alt="Scrap metal collection and processing" loading="lazy" />
         <div class="service-preview-overlay">
+          <div class="service-preview-number">02</div>
           <h3>Scrap Metal Collection</h3>
         </div>
       </div>
       <div class="service-preview-card reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&q=80" alt="Site Clearing" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&q=80" alt="Heavy machinery clearing an industrial site" loading="lazy" />
         <div class="service-preview-overlay">
+          <div class="service-preview-number">03</div>
           <h3>Site Clearing</h3>
         </div>
       </div>
       <div class="service-preview-card reveal reveal-delay-3">
-        <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80" alt="Industrial Cleanup" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80" alt="Industrial cleanup and waste removal" loading="lazy" />
         <div class="service-preview-overlay">
+          <div class="service-preview-number">04</div>
           <h3>Industrial Cleanup</h3>
         </div>
       </div>
     </div>
 
-    <div class="container" style="margin-top: 48px; text-align: center;">
+    <div class="container" style="margin-top: 52px; text-align: center;">
       <a href="services.html" class="btn reveal" data-testid="link-all-services">View All Services</a>
     </div>
   </section>
@@ -191,7 +213,7 @@
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>

@@ -1,0 +1,196 @@
+Refactor and improve my EXISTING website. Do NOT rebuild from scratch. Keep the current structure, pages, and file system, but update the design, media, and styling to fix the issues below.
+
+The site must remain **100% static (HTML, CSS, vanilla JS only)** and fully compatible with Netlify.
+
+---
+
+## ❗ CURRENT ISSUES TO FIX
+
+1. The design feels outdated and not modern
+2. Images are not relevant to scrap metal or demolition
+3. Background video is not good quality or not relevant
+4. Overall site lacks a strong industrial/construction feel
+5. Hero section does not feel impactful or professional
+
+---
+
+## 🎯 GOAL
+
+Upgrade the existing site to look:
+
+* Modern
+* Clean
+* Professional
+* Strong industrial / construction themed
+* High-end business quality
+
+---
+
+## 🎨 DESIGN IMPROVEMENTS (DO NOT CHANGE STRUCTURE)
+
+* Keep all pages and layout structure
+* Improve styling using:
+
+  * Better spacing
+  * Strong typography
+  * Modern sections
+  * Cleaner alignment
+
+Use:
+
+* Orange: #ff8c2c
+* Dark grey / black: #1a1a1a
+* White: #ffffff
+
+Add:
+
+* Subtle animations (fade-in, hover effects)
+* Smooth transitions
+* Modern card designs
+
+---
+
+## 🏠 HERO SECTION FIX (VERY IMPORTANT)
+
+### 🎥 Replace Background Video
+
+Replace current video with:
+
+* A **real demolition machine (excavator demolishing a building)**
+* Must feel powerful and industrial
+
+Video must:
+
+* autoplay
+* muted
+* loop
+* playsinline (for mobile support)
+* compressed for fast loading
+
+---
+
+### ⚡ Add Overlay
+
+* Add a dark gradient overlay on top of video
+* Improve readability
+* Optional subtle moving texture (dust/grain)
+
+---
+
+### 🔤 Improve Hero Text
+
+Keep existing text but enhance it:
+
+“Demolomet – Scrap Metal & Demolition [WORD]”
+
+Make [WORD] rotate smoothly between:
+
+* Experts
+* Specialists
+* Contractors
+* Solutions
+
+Requirements:
+
+* Smooth fade or typing animation
+* 2–3 seconds per word
+* Clean and professional
+
+---
+
+## 🖼️ FIX ALL IMAGES
+
+Replace ALL current images with relevant ones:
+
+Use:
+
+* Scrap metal piles
+* Excavators demolishing structures
+* Industrial work sites
+* Heavy machinery
+
+Requirements:
+
+* High quality
+* Optimized for web (fast loading)
+* Proper alt tags for SEO
+
+---
+
+## 🛠 SERVICES SECTION
+
+* Keep structure
+* Improve styling:
+
+  * Modern cards
+  * Hover effects
+  * Better spacing
+* Optional: add simple icons
+
+---
+
+## 🏗 PROJECTS PAGE
+
+* Improve before & after layout
+* Make it more visual and impactful
+* Use relevant demolition placeholders
+
+---
+
+## 📞 CONTACT PAGE
+
+Keep everything but improve:
+
+* Layout spacing
+* Form styling (modern inputs, better UI)
+* Map section alignment
+
+---
+
+## 💬 WHATSAPP BUTTON
+
+Keep it, but:
+
+* Improve styling (modern, clean)
+* Add hover effect
+* Keep fixed bottom-right
+
+---
+
+## ⚡ PERFORMANCE
+
+* Optimize images
+* Compress video
+* Ensure fast load speed
+* No heavy scripts
+
+---
+
+## 📱 MOBILE FIXES
+
+* Ensure video works on mobile (playsinline)
+* Improve text scaling
+* Ensure buttons are clickable and spaced
+
+---
+
+## ⚠️ IMPORTANT
+
+* DO NOT convert to React or any framework
+* DO NOT add build tools
+* DO NOT change file structure
+* ONLY improve existing files (HTML, CSS, JS)
+
+---
+
+## 🎯 RESULT
+
+The final site should feel:
+
+* Modern
+* Clean
+* Industrial
+* Professional
+* Relevant to demolition & scrap metal industry
+
+Update all necessary files while preserving the current structure.
