@@ -40,18 +40,19 @@
   <!-- HERO -->
   <section class="hero" id="home">
 
-    <!--
-      VIDEO HERO: Place your demolition video file at  video/hero.mp4
-      The video will autoplay with mute on all devices including iOS.
-      The fallback .hero-bg image shows until the video loads.
-    -->
-    <video class="hero-video" autoplay muted loop playsinline preload="auto"
-           poster="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=60">
-      <source src="video/hero.mp4" type="video/mp4" />
-    </video>
-
-    <!-- Fallback background image (always visible before/behind video) -->
+    <!-- Fallback background image (always visible, below video) -->
     <div class="hero-bg"></div>
+
+    <!-- YouTube demolition video background — loops silently on desktop -->
+    <div class="hero-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/apSLUCeQU4E?autoplay=1&mute=1&loop=1&controls=0&playlist=apSLUCeQU4E&rel=0&showinfo=0&iv_load_policy=3&modestbranding=1&cc_load_policy=0&disablekb=1"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        title="Demolition video background"
+        aria-hidden="true">
+      </iframe>
+    </div>
 
     <!-- Layered overlays -->
     <div class="hero-overlay"></div>
@@ -116,28 +117,28 @@
 
     <div class="services-preview-grid">
       <div class="service-preview-card reveal">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Excavator demolishing a building structure" loading="lazy" />
+        <img src="https://images.pexels.com/photos/11555191/pexels-photo-11555191.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bulldozers tearing down a building during demolition" loading="lazy" />
         <div class="service-preview-overlay">
           <div class="service-preview-number">01</div>
           <h3>Demolition Services</h3>
         </div>
       </div>
       <div class="service-preview-card reveal reveal-delay-1">
-        <img src="https://images.unsplash.com/photo-1581094651181-35942459ef62?w=800&q=80" alt="Scrap metal collection and processing" loading="lazy" />
+        <img src="https://images.pexels.com/photos/6196281/pexels-photo-6196281.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Large pile of scrap metal and industrial waste at a junkyard" loading="lazy" />
         <div class="service-preview-overlay">
           <div class="service-preview-number">02</div>
           <h3>Scrap Metal Collection</h3>
         </div>
       </div>
       <div class="service-preview-card reveal reveal-delay-2">
-        <img src="https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&q=80" alt="Heavy machinery clearing an industrial site" loading="lazy" />
+        <img src="https://images.pexels.com/photos/1579356/pexels-photo-1579356.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aerial view of excavators and road roller on a construction site" loading="lazy" />
         <div class="service-preview-overlay">
           <div class="service-preview-number">03</div>
           <h3>Site Clearing</h3>
         </div>
       </div>
       <div class="service-preview-card reveal reveal-delay-3">
-        <img src="https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800&q=80" alt="Industrial cleanup and waste removal" loading="lazy" />
+        <img src="https://images.pexels.com/photos/34334647/pexels-photo-34334647.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Heavy machinery at an industrial site moving earth and debris" loading="lazy" />
         <div class="service-preview-overlay">
           <div class="service-preview-number">04</div>
           <h3>Industrial Cleanup</h3>
