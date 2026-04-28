@@ -3,6 +3,29 @@
 // ========================
 
 // ========================
+// YOUTUBE — lazy inject after page load (desktop only)
+// ========================
+(function lazyYouTube() {
+  var wrap = document.getElementById('heroVideoWrap');
+  if (!wrap) return;
+  if (window.innerWidth <= 768) return;
+  function inject() {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/G4cc8r5Gt0Y?autoplay=1&mute=1&loop=1&controls=0&playlist=G4cc8r5Gt0Y&rel=0&showinfo=0&iv_load_policy=3&modestbranding=1&cc_load_policy=0&disablekb=1&start=5';
+    iframe.allow = 'autoplay; encrypted-media';
+    iframe.allowFullscreen = true;
+    iframe.title = 'Demolition video background';
+    iframe.setAttribute('aria-hidden', 'true');
+    wrap.appendChild(iframe);
+  }
+  if (document.readyState === 'complete') {
+    setTimeout(inject, 300);
+  } else {
+    window.addEventListener('load', function() { setTimeout(inject, 300); });
+  }
+})();
+
+// ========================
 // HERO PARTICLES — floating dust / sparks
 // ========================
 (function initHeroParticles() {
