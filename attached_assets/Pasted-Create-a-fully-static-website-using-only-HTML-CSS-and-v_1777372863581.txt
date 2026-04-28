@@ -1,0 +1,228 @@
+Create a **fully static website** using only **HTML, CSS, and vanilla JavaScript** (no frameworks, no Node.js, no build tools, no dependencies). The output must be simple files that can be directly uploaded to Netlify.
+
+Project name: **Demolomet**
+
+Business: Scrap metal and demolition company.
+
+---
+
+## 🔧 REQUIREMENTS
+
+### 🌐 Pages (separate HTML files)
+
+* index.html (Home)
+* services.html
+* about.html
+* projects.html (Before & After)
+* contact.html
+
+---
+
+## 🎨 Design
+
+* Theme: Industrial / construction style
+* Colors:
+
+  * Orange: #ff8c2c
+  * Dark grey: #1f1f1f
+  * White: #ffffff
+* Bold, strong fonts (construction feel)
+* Clean layout, modern but rugged
+* Fully responsive
+
+---
+
+## 🏠 HOME PAGE
+
+### 🎥 Background Video
+
+* Full-width demolition video
+* Must:
+
+  * autoplay
+  * muted
+  * loop
+  * compressed for fast loading
+  * start instantly
+
+---
+
+### ⚡ OVERLAY EFFECT (IMPORTANT)
+
+* Add a **moving animated overlay on top of the video**, such as:
+
+  * subtle dark gradient moving slowly
+  * or animated diagonal lines / dust effect
+* This overlay must:
+
+  * sit above the video
+  * improve readability
+  * create a dynamic “industrial motion” feel
+
+---
+
+### 🔤 HERO TEXT WITH WORD ANIMATION
+
+Main heading:
+**“Demolomet – Scrap Metal & Demolition [WORD]”**
+
+* The last word must **cycle dynamically** using JavaScript typing or fade effect
+* Words to cycle through:
+
+  * Experts
+  * Specialists
+  * Professionals
+  * Contractors
+  * Solutions
+
+### Animation requirements:
+
+* Smooth typing OR fade transition
+* Loop continuously
+* No page reload
+* Fast and clean (no external libraries)
+
+---
+
+### CTA
+
+* Button: “Get a Quote”
+* Scroll or link to contact page
+
+---
+
+### ✨ Extra effects
+
+* Smooth fade-in sections when scrolling
+* Slight parallax feel (optional but lightweight)
+
+---
+
+## 🛠 SERVICES PAGE
+
+Include:
+
+* Demolition Services
+* Scrap Metal Collection
+* Site Clearing
+* Industrial Cleanup
+
+Styled in strong industrial blocks or cards.
+
+---
+
+## 👷 ABOUT PAGE
+
+* Company overview
+* Emphasize reliability, safety, experience
+* Contact person: **Dalmain**
+
+---
+
+## 🏗 PROJECTS PAGE
+
+* Before & After image grid
+* Hover effects
+* Easy-to-replace placeholder images
+
+---
+
+## 📞 CONTACT PAGE
+
+### Contact Info:
+
+* Phone: 072 879 4946
+* Email: [dalmain@demolomet.co.za](mailto:dalmain@demolomet.co.za)
+* Contact Person: Dalmain
+
+---
+
+### 📍 Locations + Maps
+
+1. Plot 523 Van Der Hoff Ave, Rietfontein, Hartbeespoort Dam
+2. 15 Theuns Mulder Street, Brits Industrial, Brits
+
+### Map Requirements:
+
+* Two embedded Google Maps
+* Each must:
+
+  * Display correct location
+  * Be clickable
+  * Open in Google Maps in a new tab
+
+---
+
+## 📝 CONTACT FORM
+
+Fields:
+
+* Name
+* Surname
+* Contact Number
+* Email
+* Location
+* Message
+
+Requirements:
+
+* Styled properly
+* HTML validation
+* Netlify form compatible (no backend required)
+
+---
+
+## 💬 WHATSAPP BUTTON
+
+* Floating bottom-right
+* Always visible while scrolling
+* Link:
+  https://wa.me/27728794946
+* Use WhatsApp icon
+
+---
+
+## ⚡ SEO
+
+* Meta titles + descriptions on every page
+* Semantic HTML
+* Alt tags
+* Fast loading
+* Mobile optimized
+
+---
+
+## 📁 FILE STRUCTURE
+
+* index.html
+* services.html
+* about.html
+* projects.html
+* contact.html
+* css/style.css
+* js/script.js
+* images/
+* video/
+
+---
+
+## ⚠️ IMPORTANT
+
+* NO frameworks (React, Vue, etc.)
+* NO npm or builds
+* 100% static
+* Netlify-ready
+* Clean, readable code
+
+---
+
+## 🎯 EXTRA UI FEATURES
+
+* Sticky navbar
+* Footer with quick links + contact info
+* Hover animations
+* Strong industrial visual style
+
+---
+
+Generate ALL files with complete working code.

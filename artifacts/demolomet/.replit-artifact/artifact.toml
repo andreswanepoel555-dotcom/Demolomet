@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Demolomet"
+version = "1.0.0"
+id = "artifacts/demolomet"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21873
+
+[services.development]
+run = "pnpm --filter @workspace/demolomet run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/demolomet", "run", "build" ]
+publicDir = "artifacts/demolomet/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21873"
+BASE_PATH = "/"

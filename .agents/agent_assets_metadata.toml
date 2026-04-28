@@ -1,0 +1,80 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "nlxTQG6yOQAAlTg3q9aHS"
+uri = "file://artifacts/demolomet/src/assets/hero.png"
+type = "image"
+title = "Aerial demolition site"
+
+[[generated]]
+id = "V9JUzCAlRw6i-lmLmGOkf"
+uri = "file://artifacts/demolomet/src/assets/service-demo.png"
+type = "image"
+title = "Demolition services"
+
+[[generated]]
+id = "zFHHSelD6pwm4yyUuBMg8"
+uri = "file://artifacts/demolomet/src/assets/service-scrap.png"
+type = "image"
+title = "Scrap metal collection"
+
+[[generated]]
+id = "VIjOueUUUG3WzzObd1yG3"
+uri = "file://artifacts/demolomet/src/assets/service-site.png"
+type = "image"
+title = "Site clearing"
+
+[[generated]]
+id = "jdI_pQ4iOTxEUtO1ELs0s"
+uri = "file://artifacts/demolomet/src/assets/service-cleanup.png"
+type = "image"
+title = "Industrial cleanup"
+
+[[generated]]
+id = "Z1vWN7kpENfKNR3JalkoJ"
+uri = "file://artifacts/demolomet/src/assets/proj1-before.png"
+type = "image"
+title = "Project 1 Before"
+
+[[generated]]
+id = "brLzGoRiBHCWJAsIWAXmp"
+uri = "file://artifacts/demolomet/src/assets/proj1-after.png"
+type = "image"
+title = "Project 1 After"
+
+[[generated]]
+id = "qTQn_Tc2BpuPfYpr-I13A"
+uri = "file://artifacts/demolomet/src/assets/proj2-before.png"
+type = "image"
+title = "Project 2 Before"
+
+[[generated]]
+id = "wXnNOjyJhVAE2Ngtbb2B7"
+uri = "file://artifacts/demolomet/src/assets/proj2-after.png"
+type = "image"
+title = "Project 2 After"
+
+[[generated]]
+id = "o_EwMIqEPiGyI9pdkQU9h"
+uri = "file://artifacts/demolomet/src/assets/proj3-before.png"
+type = "image"
+title = "Project 3 Before"
+
+[[generated]]
+id = "P9bxSntpOvKLGtR2ose3Q"
+uri = "file://artifacts/demolomet/src/assets/proj3-after.png"
+type = "image"
+title = "Project 3 After"
+
+[[generated]]
+id = "oXy2VTcqMOKbDnMn6lSgi"
+uri = "file://artifacts/demolomet/src/assets/proj4-before.png"
+type = "image"
+title = "Project 4 Before"
+
+[[generated]]
+id = "S5TYg8TA2rb2TXUicljQP"
+uri = "file://artifacts/demolomet/src/assets/proj4-after.png"
+type = "image"
+title = "Project 4 After"
