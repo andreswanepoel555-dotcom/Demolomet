@@ -77,6 +77,36 @@
   });
 })();
 
+// ========================
+// CONSTRUCTION TAPE STRIPS — auto-inject site-wide
+// ========================
+(function insertTapeStrips() {
+  function makeTape() {
+    const w = document.createElement('div');
+    w.className = 'tape-strip';
+    w.setAttribute('aria-hidden', 'true');
+    w.innerHTML = '<div class="tape-band"></div><div class="tape-band"></div>';
+    return w;
+  }
+
+  // After the homepage hero section
+  const hero = document.querySelector('section.hero');
+  if (hero && hero.nextElementSibling) {
+    hero.parentNode.insertBefore(makeTape(), hero.nextElementSibling);
+  }
+
+  // After .page-hero on inner pages
+  document.querySelectorAll('.page-hero').forEach(function(el) {
+    var next = el.nextElementSibling;
+    if (next) el.parentNode.insertBefore(makeTape(), next);
+  });
+
+  // Before every .cta-banner
+  document.querySelectorAll('.cta-banner').forEach(function(el) {
+    el.parentNode.insertBefore(makeTape(), el);
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ========================
