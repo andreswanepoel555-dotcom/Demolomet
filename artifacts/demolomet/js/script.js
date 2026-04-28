@@ -85,7 +85,7 @@
     const w = document.createElement('div');
     w.className = 'tape-strip';
     w.setAttribute('aria-hidden', 'true');
-    w.innerHTML = '<div class="tape-band"></div><div class="tape-band"></div>';
+    w.innerHTML = '<div class="tape-band"></div>';
     return w;
   }
 
