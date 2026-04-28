@@ -2,6 +2,81 @@
 // DEMOLOMET — MAIN SCRIPT
 // ========================
 
+// ========================
+// HERO PARTICLES — floating dust / sparks
+// ========================
+(function initHeroParticles() {
+  const canvas = document.querySelector('.hero-particles');
+  if (!canvas) return;
+  const hero = canvas.closest('.hero');
+  if (!hero) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], raf;
+
+  function resize() {
+    W = canvas.width  = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+  }
+
+  function Particle() {
+    this.reset = function() {
+      this.x      = Math.random() * W;
+      this.y      = H + Math.random() * 80;
+      this.r      = Math.random() * 2.2 + 0.4;
+      this.vx     = (Math.random() - 0.5) * 0.4;
+      this.vy     = Math.random() * 0.7 + 0.25;
+      this.maxA   = Math.random() * 0.55 + 0.15;
+      this.a      = 0;
+      this.life   = 0;
+      this.span   = Math.random() * 260 + 140;
+      this.warm   = Math.random() > 0.65;
+    };
+    this.reset();
+  }
+
+  function spawn() {
+    while (particles.length < 55) particles.push(new Particle());
+  }
+
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    if (Math.random() < 0.25 && particles.length < 55) particles.push(new Particle());
+
+    particles = particles.filter(p => {
+      p.life++;
+      p.y -= p.vy;
+      p.x += p.vx;
+      const t = p.life / p.span;
+      p.a = p.maxA * (t < 0.15 ? t / 0.15 : t > 0.75 ? 1 - (t - 0.75) / 0.25 : 1);
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      if (p.warm) {
+        ctx.fillStyle = `rgba(255,140,44,${p.a})`;
+      } else {
+        ctx.fillStyle = `rgba(255,215,130,${p.a * 0.7})`;
+      }
+      ctx.fill();
+
+      return p.life < p.span && p.y > -10;
+    });
+
+    raf = requestAnimationFrame(tick);
+  }
+
+  function stop() { cancelAnimationFrame(raf); }
+  function start() { tick(); }
+
+  resize();
+  spawn();
+  start();
+
+  window.addEventListener('resize', resize, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    document.hidden ? stop() : start();
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ========================
