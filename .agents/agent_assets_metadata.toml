@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "nlxTQG6yOQAAlTg3q9aHS"
@@ -78,3 +77,9 @@ id = "S5TYg8TA2rb2TXUicljQP"
 uri = "file://artifacts/demolomet/src/assets/proj4-after.png"
 type = "image"
 title = "Project 4 After"
+
+[[outputs]]
+id = "HQsB0vB8Jutv1hR0pBOzb"
+uri = "file://demolomet-netlify.zip"
+type = "unspecified"
+title = "demolomet-netlify.zip — Drag & drop this into Netlify"
